@@ -3,11 +3,13 @@ package org.example;
 public class Disco {
 private Artista artista;
 private String titulo;
+private String generoMusical;
 private int ventasTotales;
 
-    public Disco(Artista artista, String titulo, int ventasTotales) {
+    public Disco(Artista artista, String titulo, String generoMusical, int ventasTotales) {
         this.artista = artista;
         this.titulo = titulo;
+        this.generoMusical = generoMusical;
         this.ventasTotales = ventasTotales;
     }
 
@@ -27,6 +29,14 @@ private int ventasTotales;
         this.titulo = titulo;
     }
 
+    public String getGeneroMusical() {
+        return generoMusical;
+    }
+
+    public void setGeneroMusical(String generoMusical) {
+        this.generoMusical = generoMusical;
+    }
+
     public int getVentasTotales() {
         return ventasTotales;
     }
@@ -40,8 +50,8 @@ private int ventasTotales;
         return "Disco{" +
                 "artista=" + artista +
                 ", titulo='" + titulo + '\'' +
+                ", generoMusical='" + generoMusical + '\'' +
                 ", ventasTotales=" + ventasTotales +
                 '}';
     }
-
 }

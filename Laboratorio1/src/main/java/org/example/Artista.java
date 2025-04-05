@@ -6,9 +6,9 @@ public class Artista {
     private String nombre;
     private String genero;
     private String discoMasVendido;
-    private String ventasTotales;
+    private int ventasTotales;
 
-    public Artista(int id, String nombre, String genero, String discoMasVendido, String ventasTotales) {
+    public Artista(int id, String nombre, String genero, String discoMasVendido, int ventasTotales) {
         this.id = id;
         this.nombre = nombre;
         this.genero = genero;
@@ -48,11 +48,11 @@ public class Artista {
         this.discoMasVendido = discoMasVendido;
     }
 
-    public String getVentasTotales() {
+    public int getVentasTotales() {
         return ventasTotales;
     }
 
-    public void setVentasTotales(String ventasTotales) {
+    public void setVentasTotales(int ventasTotales) {
         this.ventasTotales = ventasTotales;
     }
 
@@ -66,5 +66,7 @@ public class Artista {
                 ", ventasTotales='" + ventasTotales + '\'' +
                 '}';
     }
+
+    //Se deben de colocar restricciones para que el Id y el nombre del artista no se puedan repetir
 
 }
