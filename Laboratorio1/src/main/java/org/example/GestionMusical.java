@@ -113,9 +113,32 @@ public class GestionMusical {
         }
     }
 
-    //Muestra el artista con mas ventas totales (de todos los dicos)
-    //TODO
-    
+    public void artistaConMasVentas() {
+        if (artistas.isEmpty()) {
+            System.out.println("No hay artistas registrados.");
+            return;
+        }
+
+        Artista top = null;
+        int maxVentas = -1;
+
+        for (Artista artista : artistas) {
+            if (artista.getVentasTotales() > maxVentas) {
+                maxVentas = artista.getVentasTotales();
+                top = artista;
+            }
+        }
+
+        if (top == null || top.getVentasTotales() == 0) {
+            System.out.println("Ningún artista tiene ventas aún.");
+            return;
+        }
+
+        System.out.println("\nArtista con más ventas:");
+        System.out.println("Id: " + top.getId() + ", Nombre: " + top.getNombre() + ", Ventas Totales: " + top.getVentasTotales());
+    }
+
+
 
     //Mostrar ventas por Disco (prueba que se actualiza luego de registrar venta de un disco)
     //TODO
