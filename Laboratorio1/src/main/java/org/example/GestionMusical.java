@@ -139,10 +139,19 @@ public class GestionMusical {
     }
 
 
+    public void mostrarVentasPorDisco() {
+        if (discos.isEmpty()) {
+            System.out.println("No hay discos registrados.");
+            return;
+        }
 
-    //Mostrar ventas por Disco (prueba que se actualiza luego de registrar venta de un disco)
-    //TODO
-
+        System.out.println("\nVentas por Disco:");
+        for (Disco disco : discos) {
+            System.out.println("Disco: " + disco.getTitulo() +
+                    " | Artista: " + disco.getArtista().getNombre() +
+                    " | Ventas totales: " + disco.getVentasTotales());
+        }
+    }
 
 
 
