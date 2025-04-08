@@ -70,8 +70,22 @@ public class GestionMusical {
                 .orElse(null);
     }
 
-    //Registra las ventas
-    //TODO
+    public void registrarVenta(String titulo, int cantidad) {
+        Optional<Disco> discoOpt = discos.stream()
+                .filter(d -> d.getTitulo().equalsIgnoreCase(titulo))
+                .findFirst();
+
+        if (discoOpt.isPresent()) {
+            Disco disco = discoOpt.get();
+            disco.registrarVentaDisco(cantidad);
+
+            Artista artista = disco.getArtista();
+            artista.setVentasTotales(calcularVentasTotalesArtista(artista));
+            System.out.println("La venta fue registrada correctamente.");
+        } else {
+            System.out.println("El disco no fue encontrado.");
+        }
+    }
 
     // Metodo que calcula las ventas totales de un artista (total de todos los discos)
     private int calcularVentasTotalesArtista(Artista artista) {
@@ -101,6 +115,7 @@ public class GestionMusical {
 
     //Muestra el artista con mas ventas totales (de todos los dicos)
     //TODO
+    
 
     //Mostrar ventas por Disco (prueba que se actualiza luego de registrar venta de un disco)
     //TODO
