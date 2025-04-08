@@ -12,18 +12,12 @@ public class Main {
             System.out.println("\nSISTEMA DE TIENDA MUSICAL");
             System.out.println("1. Registrar nuevo artista");
             System.out.println("2. Registrar nuevo disco");
-
-            //Colocar opcion 3: Registrar venta de un disco
-
-
+            System.out.println("3. Registrar venta de un disco");
             System.out.println("4. Mostrar discos con más de X unidades vendidas");
-            //Colocar opcion 5: Artista con mas discos
-
+            System.out.println("5. Mostrar artista con más ventas");
             System.out.println("6. Mostrar todos los artistas");
             System.out.println("7. Mostrar todos los discos");
-
-            //Colocar opcion 8: Mostrar ventas por disco
-
+            System.out.println("8. Mostrar ventas por disco");
             System.out.println("9. Salir");
             System.out.print("Elige una opción: ");
             opcion = scanner.nextInt();
@@ -64,7 +58,18 @@ public class Main {
                     break;
 
                 case 3:
-                    //TODO
+                    if (!tienda.hayArtistasRegistrados()) {
+                        System.out.println("No hay artistas registrados. Primero registre un artista.");
+                        break;
+                    }
+
+                    System.out.print("Título del disco vendido: ");
+                    String tituloVenta = scanner.nextLine();
+                    System.out.print("Cantidad vendida: ");
+                    int cantidad = scanner.nextInt();
+                    scanner.nextLine();
+                    tienda.registrarVenta(tituloVenta, cantidad);
+                    break;
 
                 case 4:
                     if (!tienda.hayDiscosRegistrados()) {
@@ -80,7 +85,8 @@ public class Main {
 
 
                 case 5:
-                   //TODO
+                    tienda.artistaConMasVentas();
+                    break;
 
                 case 6:
                     tienda.mostrarArtistas();
@@ -91,7 +97,8 @@ public class Main {
                     break;
 
                 case 8:
-                    //TODO
+                    tienda.mostrarVentasPorDisco();
+                    break;
 
                 case 9:
                     System.out.println("Gracias por usar el sistema :D");
