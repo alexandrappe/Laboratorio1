@@ -56,6 +56,10 @@ public class Artista {
         this.ventasTotales = ventasTotales;
     }
 
+    public void sumarVentas(int cantidad){
+        this.ventasTotales += cantidad;
+    }
+
     @Override
     public String toString() {
         return "Artista{" +
@@ -67,6 +71,5 @@ public class Artista {
                 '}';
     }
 
-    //Se deben de colocar restricciones para que el Id y el nombre del artista no se puedan repetir
 
 }

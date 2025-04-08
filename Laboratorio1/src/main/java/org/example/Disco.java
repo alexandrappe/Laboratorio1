@@ -45,6 +45,19 @@ private int ventasTotales;
         this.ventasTotales = ventasTotales;
     }
 
+    public void registrarVentaDisco(int cantidad){
+        ventasTotales += cantidad;
+        artista.sumarVentas(cantidad);
+
+        if(ventasTotales > artista.getVentasTotales()){
+            artista.setDiscoMasVendido(titulo);
+        }
+    }
+
+        private int VentasDiscoMasVendido(){
+        return ventasTotales;
+        }
+
     @Override
     public String toString() {
         return "Disco{" +
